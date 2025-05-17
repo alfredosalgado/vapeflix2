@@ -807,9 +807,6 @@ input, textarea {
 
 
 
-
-
-
 /* Estilo para las cards de categoría */
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -876,7 +873,6 @@ input, textarea {
   padding-bottom: 10px;
 }
 
-/* Estilos para los controles del carrusel (Bootstrap los maneja mayormente) */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.5); /* Fondo para mejor visibilidad */
@@ -887,7 +883,6 @@ input, textarea {
   background-color: #68b302; /* Color para los indicadores */
 }
 
-/* Manteniendo tus estilos originales de fondo y gradiente */
 .div-con-imagen2 {
   position: relative;
   width: 100%;
@@ -917,56 +912,52 @@ input, textarea {
   pointer-events: none;
 }
 
-/* Estilo para el botón Lo Quiero (TUS NUEVOS ESTILOS) */
 .btn-whatsapp {
-  background-color: #68b302; /* Color verde principal */
+  background-color: #68b302;
   color: white;
   border-radius: 25px;
   font-weight: bold;
   text-decoration: none;
   font-size: 0.9rem;
-  padding: 0.6rem 1.2rem; /* Añadido padding para mejor apariencia con inline-flex */
+  padding: 0.6rem 1.2rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center; /* Para centrar el texto si solo es texto */
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
-/* Efecto al pasar el mouse (TUS NUEVOS ESTILOS) */
 .btn-whatsapp:hover {
-  background-color: #3864db; /* Azul en hover (según tu CSS) */
+  background-color: #3864db;
   color: #ffffff;
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Contenedor de especificaciones y lista base */
+/* Contenedor de especificaciones y lista base (TUS ESTILOS ORIGINALES) */
 .specs-container {
     text-align: left;
-    margin-top: 0.5rem;
+    margin-top: 0.5rem; /* Se mantiene, pero el panel tendrá su propio padding */
 }
 
-.specs {
+.specs { /* Esta es tu UL original para specs */
     list-style: disc;
-    padding-left: 20px; /* Padding para los bullets */
-    font-size: 0.9rem; /* Tamaño de fuente general para las especificaciones */
-    margin-bottom: 1rem; /* Espacio después de la lista de especificaciones */
+    padding-left: 20px; 
+    font-size: 0.9rem; 
+    margin-bottom: 1rem; /* Se mantiene este margen para la lista UL */
 }
 
-/* Estilo para los items de la lista de especificaciones (TUS NUEVOS ESTILOS) */
 .specs li {
-  color: #ffffff; /* Color del texto del valor */
-  margin-bottom: 0.3rem; /* Espacio entre ítems de especificaciones */
+  color: #ffffff; 
+  margin-bottom: 0.3rem; 
 }
 
-/* Estilo para el texto strong dentro de los items (TUS NUEVOS ESTILOS) */
 .specs li strong {
-  color: #e74c3c; /* Color para la etiqueta (ej. "Sabor:") */
-  margin-right: 0.4em; /* Pequeño espacio después del strong */
+  color: #e74c3c; 
+  margin-right: 0.4em; 
 }
 
-/* Estilo base para el botón "Especificaciones" (TUS NUEVOS ESTILOS) */
-.btn-vermas {
+/* Estilo base para el botón "Especificaciones" (TUS ESTILOS ORIGINALES) */
+.btn-vermas { /* Este es tu botón original para Especificaciones */
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
@@ -980,30 +971,106 @@ input, textarea {
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
   cursor: pointer;
-  margin-bottom: 10px; /* o 0.5rem según prefieras */
+  margin-bottom: 10px; /* Mantenemos tu margen inferior original para este botón */
 }
 
-/* Hover suave para "Especificaciones" (TUS NUEVOS ESTILOS) */
 .btn-vermas:hover {
   background: linear-gradient(135deg, #f06595, #ff6b6b);
   transform: translateY(-1px);
-  color: #fff; /* Asegurar que el color del texto se mantenga o cambie según necesites */
+  color: #fff; 
 }
 
-/* Focus accesible para "Especificaciones" (TUS NUEVOS ESTILOS) */
 .btn-vermas:focus {
   outline: none;
   box-shadow: 0 0 0 0.2rem rgb(218, 5, 218);
 }
 
+/* --- INICIO: NUEVOS ESTILOS Y AJUSTES MÍNIMOS PARA ACORDEÓN --- */
 
-/* Media Queries para responsividad */
+/* Contenedor para los botones del acordeón */
+.accordion-buttons-container {
+    display: flex;
+    justify-content: space-around; /* O space-between */
+    gap: 10px;
+    margin-bottom: 10px; /* Margen similar al que tenía .btn-vermas */
+}
+
+/* Clase común para los botones del acordeón (si quieres unificar más el estilo) */
+/* .btn-vermas y .btn-que-contiene ya tienen la clase .btn-accordion-toggle en el JS */
+.btn-accordion-toggle {
+  flex-grow: 1; /* Para que los botones se expandan en el contenedor */
+  justify-content: center; /* Centra el texto si es un flex item */
+  /* Hereda los estilos de .btn-vermas o .btn-que-contiene si se aplican esas clases */
+}
+
+
+/* Botón para "Qué contiene" - Aseguramos que tenga estilos similares a .btn-vermas */
+.btn-que-contiene {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  background: linear-gradient(135deg, #02fcfc4d, #00000069); /* Color diferente para distinguirlo, ejemplo azulado */
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  margin-bottom: 10px; /* Similar a .btn-vermas */
+}
+
+.btn-que-contiene:hover {
+  background: linear-gradient(135deg, #65f0f0, #6bfff3); /* Hover azulado */
+  transform: translateY(-1px);
+  color: #fff; 
+}
+
+.btn-que-contiene:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgb(5, 218, 218); /* Sombra azulada */
+}
+
+
+/* Paneles colapsables - .specs-container ya existe, añadimos .contains-container */
+/* No es necesario redefinir .specs-container si ya está bien. */
+/* Si quieres que ambos paneles tengan un ligero fondo o padding, puedes hacerlo aquí: */
+.specs-container, .contains-container {
+    padding: 10px; /* Padding interno para el contenido del panel */
+    background-color: rgba(20, 20, 20, 0.3); /* Fondo ligeramente más oscuro para los paneles */
+    border-radius: 6px; /* Bordes redondeados para los paneles */
+    margin-top: 0; /* El contenedor .accordion gestionará el espaciado */
+}
+
+.contains-container { /* Estilo específico si es necesario, sino hereda de arriba */
+    text-align: left;
+    /* margin-top: 0.5rem; // Quitado, se maneja por .accordion o .accordion-buttons-container */
+}
+
+/* Lista para "Qué contiene" */
+.contains-list {
+    list-style: disc;
+    padding-left: 20px; 
+    font-size: 0.9rem; 
+    margin-bottom: 1rem; /* Igual que tu clase .specs para la lista ul */
+    color: #ffffff; 
+}
+
+.contains-list li {
+  color: #ffffff; 
+  margin-bottom: 0.3rem; 
+}
+/* --- FIN: NUEVOS ESTILOS Y AJUSTES MÍNIMOS PARA ACORDEÓN --- */
+
+
 @media (max-width: 767px) {
   .div-con-imagen2 {
     padding-top: 0px;
   }
   .carousel-item img {
-    max-height: 250px; /* Ajusta para móviles */
+    max-height: 250px; 
   }
   .tituloc {
     font-size: 1.5rem;
@@ -1019,9 +1086,17 @@ input, textarea {
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
   }
-  .btn-vermas {
+
+  /* Ajuste responsivo para botones de acordeón */
+  .accordion-buttons-container {
+    flex-direction: column; /* Apila los botones */
+    gap: 8px;
+  }
+  .btn-vermas, .btn-que-contiene { /* Aplicar a ambos botones */
     font-size: 0.8rem;
     padding: 0.3rem 0.7rem;
+    width: 100%; /* Para que ocupen todo el ancho al apilarse */
+    margin-bottom: 0; /* Quitar margen inferior individual cuando están en el contenedor flex */
   }
 }
 
