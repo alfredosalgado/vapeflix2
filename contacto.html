@@ -34,8 +34,8 @@
         <div class="collapse navbar-collapse ms-auto" id="navbarNavAltMarkup">
           <div class="navbar-nav w-100 d-flex justify-content-around text-barlow">
             <a class="nav-link text-maule" href="./index.html">Inicio</a>
-            <a class="nav-link text-maule" href="#nosotros">Nosotros</a>
-            <a class="nav-link text-maule" href="./productos.html">Productos</a>
+            <a class="nav-link text-maule" href="./nosotros.html">Nosotros</a>
+            <a class="nav-link text-maule" href="#">Productos</a>
             <a class="nav-link text-maule" href="#contacto">Contacto</a>
           </div>
         </div>
@@ -44,42 +44,7 @@
 
 
 
-<div class="">
-  <div class="container">
-    <section id="nosotros" class="row nosotrospagina justify-content-center">
-      <div class="col-12 col-md-6 flex-column">
-        <h2>Nuestra Historia: De Hobby a Excelencia"</h2>
-        <p>En VapeFlix, comenzamos con un simple hobby: la alquimia. Nuestra dedicación nos llevó a crear Lucifer, una obra maestra que combina el dulce sabor de la frambuesa y las fresas, con un toque de frescura helada. Esta primera creación marcó el inicio de un viaje de seis meses llenos de experimentación y perfección. Fue un hito que nos motivó a seguir innovando, lanzando 15 nuevos sabores y estableciendo colaboraciones con marcas reconocidas en el mundo del vapeo.</p>
-        <p>El primer año fue crucial para nuestra expansión, con un evento que nos ayudó a crecer y darnos a conocer. Al segundo año, nuestro impacto ya había atraído patrocinadores como Vaporesso, Tigo Vape, Heaven & Hell, Megacloud, 4 Vape House y Artesano, entre otros. Con una tienda física consolidada y redes sociales vibrantes, nos establecimos como líderes en La Cisterna.</p>
-        <p>Hoy, con 4 años de trayectoria, seguimos evolucionando para llegar al mundo entero. Respaldados por la confianza de nuestros clientes, reseñas y grandes colaboradores, estamos listos para ofrecer más beneficios, eventos y concursos. En VapeFlix, no solo ofrecemos productos de calidad, sino también una experiencia única, en la que tú eres la pieza clave para dar un paso más en nuestra misión.</p>
-      </div>
-      <div class="col-12 col-md-6">
-        <img class="rounded" src="./assets/img/portada/2.jpg" width="100%" alt="">
-      </div>
-     </section>
-  
-  </div>
-
-
-  <section id="mision" class="mision-vision-section">
-    <h2 class="section-title-mision pb-5">MISIÓN & VISIÓN</h2>
-    <div class="mision-vision-container">
-      <div class="mision">
-        <img src="assets/img/icons/mision.png" alt="Misión APR Maule">
-        <h3>MISIÓN</h3>
-        <p>
-          Llegar a más gente para influenciar el medio ambiente , que el humo del cigarrillo es dañino para el cuerpo y para el medio ambiente y que el vaporizador es un 95% menos dañino Y 100% mejor con su vapor para las personas alrededor y para el medio ambiente.
-        </p>
-      </div>
-      <div class="vision">
-        <img src="assets/img/icons/vision.png" alt="Visión APR Maule">
-        <h3>VISIÓN</h3>
-        <p>
-          Ser una empresa referente en soluciones industriales y domiciliarias dentro de la Región Metropolitana, destacando por nuestro profesionalismo, compromiso y atención personalizada.
-        </p>
-      </div>
-    </div>
-  </section>
+<div class="bg-full">
     
 
 
@@ -93,6 +58,41 @@
 
 
 
+
+<section class="contacto-section" id="contacto">
+  <h2 class="contacto-title pb-5">CONTACTO</h2>
+
+  <div class="contacto-container">
+    <div class="info">
+      <p><strong>Aqui va la direccion, Región Metropolitana</strong><br>Oficina 911</p>
+      <p>📞 +56 9 9276 3835 – Contacto: Cesar</p>
+      <p>📧 info@vapeflix.cl</p>
+      <p>🕘 Lunes a Viernes de 09:00 – 18:00</p>
+      <p>🕘 Sábados de 09:00 – 14:00</p>
+      <p>¡Agenda tu primera reunión con nosotros!</p>
+      <div class="d-flex justify-content-center gap-5 pb-5 pt-3">
+        <a href="" target="_blank"><i class="fa-brands fa-facebook fa-3x text-primary"></i></a>
+        <a href="" target="_blank"><i class="fa-brands fa-square-instagram fa-3x bg-insta active"></i></a>
+        <a href="" target="_blank"><i class="fa-brands fa-tiktok fa-3x text-dark"></i></a>
+      </div>
+    </div>
+
+    <form class="formulario" onsubmit="enviarWhatsApp(); return false;">
+      <div class="form-row">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="tel" id="telefono" placeholder="Teléfono" required>
+      </div>
+      <input type="email" id="correo" placeholder="Dirección de correo electrónico" required>
+      <textarea id="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+      <button type="submit" class="contacto-btn">CONTACTO</button>
+
+    </form>
+  </div>
+
+  <div class="mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.0717099031317!2d-70.76029892559711!3d-33.499511373370034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c32eb81c9a65%3A0x612b92437f52fa33!2sAv.%20Los%20Pajaritos%203030%2C%209250552%20Maip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1747271189306!5m2!1sen!2scl" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
 
 
 
@@ -111,9 +111,14 @@
     
      <footer class="row bg-dark p-5 gap-5 justify-content-evenly align-items-center">
       <div class="col-12 col-md-3 d-flex justify-content-center flex-column gap-2 text-center">
-        <a class="hp" href="./index.html">Página de Inicio</a>
-        <a class="hp" href="#nosotros">Nosotros</a>
-        <a class="hp" href="./productos.html">Productos</a>
+        <a class="hp" href="#inicio">Página de Inicio</a>
+        <a class="hp" href="#serv">Servicios</a>
+        <a class="hp" href="#nosotros">Sobre Nosotros</a>
+        <a class="hp" href="#mision">Misión & Visión</a>
+        <a class="hp" href="#pilares">Valores</a>
+        <a class="hp" href="#why">Por qué nos prefieren</a>
+        <a class="hp" href="#galeria">Galeria</a>
+        <a class="hp" href="#reconocer">Testimonios</a>
         <a class="hp" href="#contacto">Contacto</a>
       </div>
       

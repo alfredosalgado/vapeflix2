@@ -299,33 +299,30 @@
 
 
 
-
+.nosotrospagina {
+  padding-top: 195px;
+  width: 100%;
+  background-color: white;
+  padding-bottom: 50px;
+}
 
 
 
 .mision-vision-section {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(
-  to bottom,
-  #111111 0%,
-  #111111 20%,
-  #220000 40%,
-  #111111 60%,
-  #111111 100%
-);
-  padding-top: 150px;
+  background: white;
 }
 
-.section-title {
+.section-title-mision {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   position: relative;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
-.section-title::after {
+.section-title-mision::after {
   content: "";
   display: block;
   width: 60px;
@@ -359,13 +356,13 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .mision p, .vision p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Responsive */
@@ -407,10 +404,11 @@
 
 
 .reconocimientos-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background: white;
   text-align: center;
-  padding-top: 140px;
+  padding-bottom: 90px;
+
 }
 
 .section-title-test {
@@ -663,7 +661,7 @@
   padding: 4rem 2rem;
   background: white;
   text-align: center;
-  padding-top: 140px;
+  padding-top: 190px;
 }
 
 .contacto-title {
