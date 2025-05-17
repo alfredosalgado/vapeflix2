@@ -200,14 +200,12 @@
 
   body {
     padding-top: 145px;
-    background-color: #111111;
+    
   }
 }
 /* FIN PAGINA DE INICIO */
 
-.bg-full {
-  background-color: #111111;
-}
+
 
 
 
@@ -370,6 +368,9 @@
   .mision-vision-container {
     flex-direction: column;
     align-items: center;
+  }
+  .nosotrospagina {
+    padding-top: 45px;
   }
 }
 
