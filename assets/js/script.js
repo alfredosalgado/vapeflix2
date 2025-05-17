@@ -166,7 +166,7 @@ function prevSlide() {
 
 
 
-// js/script.js
+// EVENTOS
 
 document.addEventListener('DOMContentLoaded', () => {
   const totalFotos = 8;
