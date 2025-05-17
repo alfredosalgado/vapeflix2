@@ -169,7 +169,7 @@ function prevSlide() {
 // EVENTOS
 
 document.addEventListener('DOMContentLoaded', () => {
-  const totalFotos = 8;
+  const totalFotos = 17;
   const carousel   = document.querySelector('.galeria-carousel');
   const nextBtn    = carousel.querySelector('.galeria-btn.next');
   const prevBtn    = carousel.querySelector('.galeria-btn.prev');
@@ -268,7 +268,7 @@ function enviarWhatsApp() {
   const mensaje = document.getElementById("mensaje").value;
 
   const texto = `Hola, mi nombre es ${nombre}.%0AMi teléfono es: ${telefono}.%0AMi correo es: ${correo}.%0AMensaje:%0A${mensaje}`;
-  const numero = "56992763835";
+  const numero = "56965527123";
   const url = `https://wa.me/${numero}?text=${texto}`;
 
   window.open(url, "_blank");
