@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+//SECCION CONTACTO
 function enviarWhatsApp() {
   const nombre = document.getElementById("nombre").value;
   const telefono = document.getElementById("telefono").value;
@@ -327,131 +327,338 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
-// js/script.js
 
-// Array de productos (igual que antes)
-const products = [
-  {
-    title: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
-    description: "Vape desechable de alto rendimiento con mezcla tropical y tecnología avanzada.",
-    price: "$26.000",
-    image: "./assets/img/productos/producto1.png",
-    specs: {
-      sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
-      capacidadLiquido: "24 ml",
-      bateria: "800 mAh",
-      resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
-      puffs: "Hasta 30,000 inhalaciones",
-      puertoCarga: "Tipo-C",
-      nicotina: "5% (50 mg)",
-      pantalla: "LCD para controlar niveles de líquido y batería",
-      modosPotencia: "Tres opciones de potencia personalizable"
-    }
-  },
-  {
-    title: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
-    description: "Vape desechable de alto rendimiento con mezcla tropical y tecnología avanzada.",
-    price: "$26.000",
-    image: "./assets/img/productos/producto2.png",
-    specs: {
-      sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
-      capacidadLiquido: "24 ml",
-      bateria: "800 mAh",
-      resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
-      puffs: "Hasta 30,000 inhalaciones",
-      puertoCarga: "Tipo-C",
-      nicotina: "5% (50 mg)",
-      pantalla: "LCD para controlar niveles de líquido y batería",
-      modosPotencia: "Tres opciones de potencia personalizable"
-    }
-  },
-  {
-    title: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
-    description: "Vape desechable de alto rendimiento con mezcla tropical y tecnología avanzada.",
-    price: "$26.000",
-    image: "./assets/img/productos/producto3.png",
-    specs: {
-      sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
-      capacidadLiquido: "24 ml",
-      bateria: "800 mAh",
-      resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
-      puffs: "Hasta 30,000 inhalaciones",
-      puertoCarga: "Tipo-C",
-      nicotina: "5% (50 mg)",
-      pantalla: "LCD para controlar niveles de líquido y batería",
-      modosPotencia: "Tres opciones de potencia personalizable"
-    }
-  },
-];
 
-function generateCards() {
-  const container = document.getElementById('product-container');
-  container.innerHTML = '';
 
-  products.forEach((product, idx) => {
-    const paymentLink = `pago.html?title=${encodeURIComponent(product.title)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}`;
+document.addEventListener('DOMContentLoaded', () => {
+  const categories = [
+    {
+      categoryTitle: "Vaporizadores Desechables",
+      idSuffix: "desechables", // Para IDs únicos de carrusel
+      items: [
+        {
+          name: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
+          price: "$26.000",
+          image: "./assets/img/productos/desechables/producto1.png", // Ruta de ejemplo
+          description: "Explosión tropical de manzana, mango y melón.",
+          specs: {
+            sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
+            capacidadLiquido: "24 ml",
+            bateria: "800 mAh",
+            resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
+            puffs: "Hasta 30,000 inhalaciones",
+            puertoCarga: "Tipo-C",
+            nicotina: "5% (50 mg)",
+            pantalla: "LCD para controlar niveles de líquido y batería",
+            modosPotencia: "Tres opciones de potencia personalizable"
+          }
+        },
+        {
+          name: "IGNITE V50 5000 Puffs Strawberry Kiwi",
+          price: "$18.000",
+          image: "./assets/img/productos/desechables/producto2.png", // Ruta de ejemplo
+          description: "Dulce fresa con un toque exótico de kiwi.",
+          specs: {
+            sabor: "Fresa y Kiwi",
+            capacidadLiquido: "12 ml",
+            bateria: "650 mAh",
+            puffs: "Hasta 5,000 inhalaciones",
+            nicotina: "5% (50 mg)",
+            activacion: "Por calada"
+          }
+        },
+        // Agrega más vaporizadores desechables aquí
+      ]
+    },
+    {
+      categoryTitle: "Vaporizadores Avanzados",
+      idSuffix: "avanzados",
+      items: [
+        {
+          name: "SMOK RPM 5 Pro Kit",
+          price: "$46.000",
+          image: "./assets/img/productos/avanzados/producto1.png", // Ruta de ejemplo
+          description: "Potencia y versatilidad para expertos.",
+          specs: {
+            potencia: "5-80W",
+            bateria: "Externa 18650 (no incluida)",
+            capacidadPod: "6.5ml",
+            resistencias: "RPM 3 Meshed Coils",
+            pantalla: "0.96-inch TFT Display",
+            carga: "Tipo-C"
+          }
+        },
+        {
+          name: "VAPORESSO Target 100 Mod",
+          price: "$52.000",
+          image: "./assets/img/productos/avanzados/producto2.png", // Ruta de ejemplo
+          description: "Diseño robusto y rendimiento superior.",
+          specs: {
+            potencia: "5-100W",
+            bateria: "Externa 18650/21700 (no incluida)",
+            chip: "AXON Chip",
+            modos: "VW, Pulse, F(t)",
+            pantalla: "0.96” TFT Screen",
+            carga: "DC 5V/2A, Type-C"
+          }
+        },
+        // Agrega más vaporizadores avanzados aquí
+      ]
+    },
+    {
+      categoryTitle: "Líquidos",
+      idSuffix: "liquidos",
+      items: [
+        {
+          name: "Nasty Juice Cush Man Mango 60ml",
+          price: "$16.000",
+          image: "./assets/img/productos/liquidos/producto1.png", // Ruta de ejemplo
+          description: "Sabor intenso a mango maduro y fresco.",
+          specs: {
+            saborPrincipal: "Mango",
+            perfilSabor: "Frutal, Fresco",
+            volumen: "60ml",
+            proporcionVGPG: "70/30",
+            nivelesNicotina: "0mg, 3mg, 6mg"
+          }
+        },
+        {
+          name: "Coastal Clouds Salt Nic Mango Berries 30ml",
+          price: "$14.000",
+          image: "./assets/img/productos/liquidos/producto2.png", // Ruta de ejemplo
+          description: "Combinación tropical de mango y bayas.",
+          specs: {
+            saborPrincipal: "Mango y Bayas",
+            tipoNicotina: "Sales de Nicotina",
+            volumen: "30ml",
+            proporcionVGPG: "50/50",
+            nivelesNicotina: "35mg, 50mg"
+          }
+        },
+        // Agrega más líquidos aquí
+      ]
+    },
+    {
+      categoryTitle: "Accesorios",
+      idSuffix: "accesorios",
+      items: [
+        {
+          name: "Drip Tips Aleader 510 Resina Epóxica (Colores Variados)",
+          price: "$5.000", // Ejemplo, actualiza el precio
+          image: "./assets/img/productos/accesorios/1.jpeg", // Ejemplo, actualiza la ruta
+          description: "Personaliza tu vapeador y mejora tu experiencia con estos drip tips 510 de resina Aleader. ¡Estilo y confort en cada calada!",
+          specs: {
+            tipo: "Drip Tip 510",
+            material: "Resina Epóxica",
+            marca: "Aleader",
+            compatibilidad: "Atomizadores con boquilla estándar 510",
+            diseno: "Patrones variados tipo panal o resina mixta (colores según disponibilidad)"
+          }
+        },
+        {
+          name: "Algodón Orgánico Wotofo Xfiber Cotton (30pcs)",
+          price: "$7.000", // Ejemplo, actualiza el precio
+          image: "./assets/img/productos/accesorios/2.jpeg", // Ejemplo, actualiza la ruta
+          description: "Algodón 100% orgánico Wotofo Xfiber, pre-cortado para facilitar tus montajes. Sabor puro y excelente capilaridad.",
+          specs: {
+            marca: "Wotofo",
+            modelo: "Xfiber Cotton",
+            material: "100% Algodón Orgánico",
+            cantidad: "30 tiras pre-cortadas",
+            dimensionesTira: "60mm (largo) x 3mm (diámetro)",
+            caracteristicas: "Rápida absorción, sin saborizantes, ideal para RDA/RTA/RDTA"
+          }
+        },
+        {
+          name: "Resistencias Pre-fabricadas Wotofo (Variedad N80/N90)",
+          price: "$10.000", // Ejemplo, actualiza el precio, puede variar por tipo
+          image: "./assets/img/productos/accesorios/3.jpeg", // Ejemplo, actualiza la ruta
+          description: "Optimiza tu tiempo con las resistencias pre-armadas de Wotofo. Alto rendimiento y sabor consistente para tus atomizadores reparables. (Consultar tipos disponibles).",
+          specs: {
+            marca: "Wotofo",
+            tipoGeneral: "Resistencias Pre-fabricadas (Prebuilt Coils)",
+            materialComun: "Nichrome 80 (N80), Nichrome 90 (N90) - varía según modelo específico",
+            presentacion: "Tubo con múltiples unidades (generalmente 5 o 10)",
+            usoRecomendado: "Atomizadores reparables (RDA, RTA, RDTA)",
+            variedad: "Diversos tipos como Fused Clapton, Framed Staple, etc. (verificar modelo exacto)"
+          }
+        },
+        {
+          name: "Algodón Orgánico Dovpo Vipers Cotton (10g)",
+          price: "$6.000", // Ejemplo, actualiza el precio
+          image: "./assets/img/productos/accesorios/4.jpeg", // Ejemplo, actualiza la ruta
+          description: "Algodón premium Dovpo Vipers, 100% orgánico de Arizona, USA. Ofrece una absorción superior y un sabor limpio para una experiencia de vapeo inigualable.",
+          specs: {
+            marca: "Dovpo",
+            modelo: "Vipers Cotton",
+            material: "100% Algodón Orgánico (Origen: Arizona, USA)",
+            pesoNeto: "10 gramos",
+            caracteristicas: "Excelente capilaridad, resistente al calor, sin impurezas"
+          }
+        },
+        {
+          name: "Kit de Herramientas para Vapeo Coil Father X6 (o similar)",
+          price: "$20.000", // Ejemplo, actualiza el precio
+          image: "./assets/img/productos/accesorios/5.jpeg", // Ejemplo, actualiza la ruta
+          description: "El kit esencial para todo vaper DIY. Construye, repara y mantén tus atomizadores como un profesional con este completo set de herramientas.",
+          specs: {
+            nombreKit: "Coil Father X6 (o kit similar de especificaciones equivalentes)",
+            contenidoTipico: [
+                "Alicate de corte de precisión",
+                "Pinzas cerámicas (resistentes al calor)",
+                "Pinzas metálicas curvas",
+                "Destornillador multi-punta (Phillips, planos)",
+                "Tijeras plegables de acero inoxidable",
+                "Guía para enrollar resistencias (Coil Jig con varios diámetros)",
+                "Cepillo de limpieza para resistencias",
+                "Estuche de transporte con cremallera"
+            ],
+            idealPara: "Construcción y mantenimiento de resistencias y atomizadores reparables"
+          }
+        },
+        {
+          name: "Cargador Efest MEGA USB (2 Bahías)",
+          price: "$18.000", // Ejemplo, actualiza el precio
+          image: "./assets/img/productos/accesorios/6.jpeg", // Ejemplo, actualiza la ruta
+          description: "Cargador inteligente Efest MEGA con dos bahías y alimentación USB. Carga tus baterías Li-ion de forma rápida, segura y eficiente.",
+          specs: {
+            marca: "Efest",
+            modelo: "MEGA USB Charger",
+            numeroDeBahias: "2 (carga independiente)",
+            alimentacion: "Micro USB / USB-C (verificar modelo exacto)",
+            compatibilidadBaterias: "Li-ion/IMR: 10440 a 26650 (ej. 18650, 20700, 21700)",
+            corrienteDeCarga: "Hasta 1A por bahía (o 2A en una sola, según modelo)",
+            indicadores: "Pantalla digital o LEDs para estado de carga y voltaje",
+            protecciones: "Sobrecarga, polaridad inversa, cortocircuito, sobrecalentamiento"
+          }
+        },
+        {
+          name: "Batería Efest IMR 21700 4000mAh 30A (Unidad)",
+          price: "$12.000", // Ejemplo, actualiza el precio por unidad
+          image: "./assets/img/productos/accesorios/7.jpeg", // Ejemplo, actualiza la ruta
+          description: "Batería Efest IMR 21700 de alto rendimiento. 4000mAh de capacidad y 30A de descarga continua para tus mods más exigentes. (Precio por unidad).",
+          specs: {
+            marca: "Efest",
+            modelo: "IMR 21700 (Purple Series)",
+            capacidad: "4000mAh",
+            voltajeNominal: "3.7V",
+            descargaContinuaMaxima: "30A",
+            descargaMaximaPulso: "Consultar especificación del fabricante (ej. 35A-40A)",
+            quimica: "IMR (Li-Mn - Litio Manganeso)",
+            tipo: "Flat Top (Polo Positivo Plano)",
+            certificaciones: "Revisar empaque (CE, RoHS)",
+            advertencia: "Usar con conocimiento, no sobrepasar límites de descarga."
+          }
+        }
+        // Puedes agregar más accesorios aquí
+      ]
+    },
+  ];
 
-    // Generamos specs (si existen)
-    let specsHTML = '';
-    if (product.specs) {
-      let items = '';
-      for (const [key, value] of Object.entries(product.specs)) {
-        const label = key.charAt(0).toUpperCase() + key.slice(1);
-        items += `<li><strong>${label}:</strong> ${value}</li>`;
+  const categoryContainer = document.getElementById('category-container');
+  const phoneNumber = "56965527123"; // Tu número de WhatsApp
+
+  if (!categoryContainer) {
+    console.error("El contenedor de categorías no fue encontrado.");
+    return;
+  }
+
+  categories.forEach((category, categoryIndex) => {
+    const carouselId = `carousel-${category.idSuffix}-${categoryIndex}`;
+
+    let carouselIndicatorsHTML = '';
+    let carouselInnerHTML = '';
+
+    category.items.forEach((item, itemIndex) => {
+      const activeClass = itemIndex === 0 ? 'active' : '';
+      const itemImageUrl = new URL(item.image, window.location.href).href; // Obtiene la URL absoluta
+
+      carouselIndicatorsHTML += `
+        <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${itemIndex}" class="${activeClass}" aria-current="${itemIndex === 0 ? 'true' : 'false'}" aria-label="Slide ${itemIndex + 1}"></button>
+      `;
+
+      let specsHTML = '';
+      if (item.specs) {
+        let specItems = '';
+        for (const [key, value] of Object.entries(item.specs)) {
+          const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1'); // Para camelCase a Título
+          specItems += `<li><strong>${label}:</strong> ${value}</li>`;
+        }
+        specsHTML = `
+          <button class="btn btn-link btn-vermas" type="button" data-bs-toggle="collapse" data-bs-target="#specs-${category.idSuffix}-${itemIndex}" aria-expanded="false" aria-controls="specs-${category.idSuffix}-${itemIndex}">
+            Especificaciones ▾
+          </button>
+          <div class="collapse specs-container" id="specs-${category.idSuffix}-${itemIndex}">
+            <ul class="specs text-start small ps-3 mb-3">
+              ${specItems}
+            </ul>
+          </div>
+        `;
       }
+      
+      const whatsappMessage = `Hola, me interesa este producto: Categoría: ${category.categoryTitle}, Variedad: ${item.name}, Valor: ${item.price}, Imagen: ${itemImageUrl}`;
+      const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`;
 
-      specsHTML = `
-        <button class="btn btn-link btn-vermas" type="button">Especificaciones ▾</button>
-        <div class="specs-container" style="display: none;">
-          <ul class="specs text-start small ps-3 mb-3">
-            ${items}
-          </ul>
+      carouselInnerHTML += `
+        <div class="carousel-item ${activeClass}">
+          <div class="imgh">
+            <img src="${item.image}" class="d-block w-100" alt="${item.name}">
+          </div>
+          <div class="carousel-item-content">
+            <h5 class="carousel-item-title">${item.name}</h5>
+            <p class="ctext mb-2">${item.description || ''}</p>
+            ${specsHTML}
+            <p class="carousel-item-price h5 text-center">${item.price || 'Consultar precio'}</p>
+            <div class="text-center mt-2 mb-5">
+              <a href="${whatsappLink}" class="btn btn-whatsapp" target="_blank">Lo quiero</a>
+            </div>
+          </div>
         </div>
       `;
-    }
+    });
 
-    // Montamos la card
-    const cardHTML = `
-      <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center">
-        <div class="card">
-          <img src="${product.image}" class="card-img-top im" alt="${product.title}">
-          <div class="card-body pt-3">
-            <h5 class="card-title tituloc">${product.title}</h5>
-            <p class="ctext mb-2">${product.description}</p>
-            ${specsHTML}
-            <p class="card-text h5 text-center">${product.price}</p>
-            <div class="text-center">
-              <a href="${paymentLink}" class="btn btn-whatsapp">Lo quiero</a>
+    const categoryCardHTML = `
+      <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center"> <div class="card w-100">
+          <div class="card-body p-0"> <h3 class="tituloc pt-3">${category.categoryTitle}</h3>
+            <div id="${carouselId}" class="carousel slide" data-bs-ride="false" data-bs-interval="3000"> <div class="carousel-indicators">
+                ${carouselIndicatorsHTML}
+              </div>
+              <div class="carousel-inner">
+                ${carouselInnerHTML}
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         </div>
       </div>
     `;
+    categoryContainer.insertAdjacentHTML('beforeend', categoryCardHTML);
 
-    // Insertamos y luego vinculamos el toggle
-    container.insertAdjacentHTML('beforeend', cardHTML);
-    if (product.specs) {
-      const lastCard = container.lastElementChild;
-      const btn = lastCard.querySelector('.btn-vermas');
-      const specsDiv = lastCard.querySelector('.specs-container');
-      btn.addEventListener('click', () => {
-        const isHidden = specsDiv.style.display === 'none';
-        specsDiv.style.display = isHidden ? 'block' : 'none';
-        btn.textContent = isHidden ? 'Ver menos ▴' : 'Especificaciones ▾';
-      });
-    }
+    // Inicializar colapsables de especificaciones y actualizar texto del botón
+    const specToggleButtons = categoryContainer.querySelectorAll(`#${carouselId} .btn-vermas`);
+    specToggleButtons.forEach(btn => {
+        const collapseElement = document.querySelector(btn.dataset.bsTarget);
+        if (collapseElement) {
+            collapseElement.addEventListener('show.bs.collapse', () => {
+                btn.innerHTML = 'Ver menos ▴';
+            });
+            collapseElement.addEventListener('hide.bs.collapse', () => {
+                btn.innerHTML = 'Especificaciones ▾';
+            });
+        }
+    });
+
   });
-}
 
-document.addEventListener('DOMContentLoaded', generateCards);
-
-
-
-
-
-
-
-
-
-
-
+  // Asegúrate de que los carruseles se inicialicen si Bootstrap no lo hace automáticamente.
+  // Usualmente, con los atributos data-bs-ride, no es necesario.
+  // Pero si quieres controlar cada carrusel explícitamente:
+  // document.querySelectorAll('.carousel').forEach(carousel => new bootstrap.Carousel(carousel));
+});
