@@ -102,12 +102,14 @@
 
 /* 1) Hacemos que el borde del toggler sea también claro */
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(250, 5, 5, 0.5);
 }
 
-/* 2) Invertimos el ícono para que pase a blanco */
+/* Ícono hamburguesa en rojo */
 .navbar-toggler-icon {
-  filter: invert(1) opacity(0.75);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='red' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  filter: none; /* Quitamos el filtro anterior */
+  opacity: 1;
 }
 
 /* (Opcional) Al pasar el mouse, que brille un poco más */
@@ -1028,9 +1030,10 @@ input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
-  background: linear-gradient(135deg, #fc02024d, #00000069);
+  background: linear-gradient(135deg, #fbff00b9, #9ad80a98);
   color: #fff;
   border: none;
+  box-shadow: 0 0 0 0.1rem rgb(255, 255, 255);
   padding: 0.4rem 0.8rem;
   border-radius: 2rem;
   font-size: 0.9rem;
@@ -1076,9 +1079,10 @@ input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
-  background: linear-gradient(135deg, #02fcfc4d, #00000069); /* Color diferente para distinguirlo, ejemplo azulado */
+  background: linear-gradient(135deg, #02cafc4d, #5fbb0869); /* Color diferente para distinguirlo, ejemplo azulado */
   color: #fff;
   border: none;
+  box-shadow: 0 0 0 0.1rem rgb(255, 255, 255);
   padding: 0.4rem 0.8rem;
   border-radius: 2rem;
   font-size: 0.9rem;
