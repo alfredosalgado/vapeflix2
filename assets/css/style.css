@@ -13,7 +13,9 @@
 }
 
 
-
+.bg-full {
+  background: #111111;
+}
 
 
 .text-home {
@@ -117,17 +119,17 @@
 
 
 
-
-/* PAGINA DE INICIO */
+/* PAGINA DE INICIO (Tus estilos existentes) */
 .hero-section {
   position: relative;
   width: 100vw;
   min-height: 100vh;
   background: url('../img/portada/1.png') center center/cover no-repeat;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  /* align-items: center; No es necesario aquí si hero-overlay lo maneja */
+  /* justify-content: flex-start; */
   padding: 0;
+  overflow: hidden; /* Para asegurar que los iconos posicionados no causen scroll */
 }
 
 .hero-overlay {
@@ -141,27 +143,31 @@
   #11111100 60%,
   #111111 100%
 );
-
   display: flex;
-  align-items: center;
-  padding-top: 145px;
+  align-items: center; /* Centra verticalmente el content-container y los iconos */
+  justify-content: space-between; /* Para empujar los iconos a la derecha si es necesario */
+  padding-top: 145px; /* Tu padding original */
+  padding-left: 50px; /* Espacio para el contenido principal */
+  padding-right: 30px; /* Espacio para los iconos sociales */
+  position: relative; /* Para posicionar los iconos dentro de este overlay */
 }
 .content-container {
   display: flex;
   align-items: center;
-  max-width: 900px;
-  width: 100%;
-  position: relative;
+  max-width: 900px; /* O el ancho que desees para tu contenido principal */
+  width: auto; /* Permitir que se ajuste al contenido */
+  position: relative; /* Mantenido de tu original */
+  z-index: 2; /* Asegurar que el contenido esté sobre otros elementos si es necesario */
 }
 .text-content {
-  width: 50%;
+  width: 100%; /* O ajusta si tienes una imagen al lado */
   background-color: rgba(255, 0, 0, 0.466);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1;
-  position: relative;
-  margin-left: 50px;
+  /* position: relative; */ /* Ya no necesita margin-left si hero-overlay maneja el padding */
+  /* margin-left: 50px; */
 }
 .text-content h1 {
   font-size: 2.5em;
@@ -175,28 +181,62 @@
   margin: 0;
 }
 
-.content-container::before {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  right: 0;
-  z-index: 0;
+.negrofondo {
+
 }
 
-/* Media Query para vista móvil */
+
+/* --- INICIO: Estilos para Iconos Sociales en Hero --- */
+.social-icons-hero {
+  position: absolute; /* Posicionamiento absoluto respecto a .hero-overlay */
+  right: 70px;       /* Distancia desde la derecha */
+  top: 50%;          /* Centrado vertical inicial */
+  transform: translateY(-50%); /* Ajuste fino para centrado vertical exacto */
+  display: flex;
+  flex-direction: column; /* Iconos apilados verticalmente */
+  gap: 15px;          /* Espacio entre iconos */
+  z-index: 10;        /* Asegurar que estén visibles */
+}
+
+.social-icons-hero a {
+  color: #ffffff;     /* Color del icono */
+  font-size: 2.8em;   /* Tamaño del icono, ajusta según tu gusto */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons-hero a:hover {
+  color: #68b302;     /* Color al pasar el mouse (tu verde característico) */
+  transform: scale(1.2); /* Efecto de agrandamiento */
+}
+/* --- FIN: Estilos para Iconos Sociales en Hero --- */
+
+
+/* Media Query para vista móvil (Tus estilos existentes con ajustes) */
 @media (max-width: 768px) {
+  .hero-overlay {
+    padding-top: 80px; /* Reducir padding superior en móviles */
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column; /* Apilar contenido e iconos si es necesario */
+    justify-content: center; /* Centrar contenido principal */
+    min-height: calc(100vh - 145px); /* Ajustar altura si tienes un header fijo */
+  }
   .content-container {
     flex-direction: column;
     position: static;
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 100%;
+    margin-bottom: 30px; /* Espacio entre el texto y los iconos si se apilan */
   }
   .text-content {
-    width: 80%;
+    width: 90%; /* Un poco más de ancho en móviles */
     margin-left: 0;
     position: static;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo más sutil para el texto en móviles */
   }
-  .image-container {
+  .image-container { /* Si tenías un .image-container, estos son tus estilos */
     width: 100%;
     position: static;
     transform: none;
@@ -209,21 +249,30 @@
     display: none;
   }
   .hero-section {
-    height: auto;
+    height: auto; /* Permitir que la altura se ajuste al contenido */
+    min-height: 100vh; /* Pero asegurar que al menos ocupe la pantalla */
     background: url('../img/portada/2.jpg') center center/cover no-repeat;
   }
 
-  .hero-overlay {
-    padding: 40px 20px;
+  /* Ajuste para los iconos sociales en móvil */
+  .social-icons-hero {
+    position: static; /* Quitar posicionamiento absoluto */
+    transform: none;    /* Quitar transformación */
+    flex-direction: row; /* Iconos en fila */
+    justify-content: center; /* Centrar los iconos */
+    gap: 25px; /* Espacio entre iconos en fila */
+    margin-top: 20px; /* Espacio sobre los iconos */
+    width: 100%;
+  }
+  .social-icons-hero a {
+    font-size: 2em; /* Iconos un poco más grandes en móviles para fácil toque */
   }
 
-  body {
-    padding-top: 145px;
-    
-  }
+  /* Tu estilo de body - considera si este padding-top es por un header fijo */
+  /* body {
+    padding-top: 145px; 
+  } */
 }
-/* FIN PAGINA DE INICIO */
-
 
 
 
@@ -287,6 +336,21 @@
   font-size: 1.07rem;
   color: #000000;
   line-height: 1.6;
+}
+
+.button-contacto {
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: red;
+  color: white;
+  font-weight: 800;
+}
+
+.button-contacto:hover {
+  padding: 22px;
+  background-color: #006a9f;
 }
 
 
@@ -1220,9 +1284,83 @@ html, body {
 
 
 
+/*--------------------------------------------------------------
+# Sección Marcas Colaboradoras
+--------------------------------------------------------------*/
+#marcas-colaboradoras {
+  background-color: #ffffff; /* Fondo blanco para la sección */
+}
 
+#marcas-colaboradoras .text-dark {
+  font-weight: bold;
+}
 
+.marca-card {
+  border: 1px solid #e0e0e0; /* Borde sutil para las cards */
+  border-radius: 10px;       /* Bordes redondeados */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Para asegurar que h-100 funcione bien con el contenido interno */
+  flex-direction: column;
+  background-color: #fff; /* Fondo de la card también blanco, pero el borde la distingue */
+}
 
+.marca-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación sutil */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al hacer hover */
+}
+
+.marca-card-img-container {
+  padding: 20px 15px 10px 15px; /* Espaciado alrededor del logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px; /* Altura mínima para el contenedor del logo, ajusta según tus logos */
+  flex-grow: 1; /* Permite que este contenedor crezca si hay espacio */
+}
+
+.marca-logo-img {
+  max-height: 70px;  /* Altura máxima del logo */
+  max-width: 100%; /* Asegura que no se desborde del contenedor */
+  object-fit: contain; /* Mantiene la proporción del logo */
+  /* Quitamos el filtro grayscale ya que el fondo es blanco y queremos que se vean bien */
+}
+
+.marca-card .card-body {
+  padding: 10px 15px 15px 15px; /* Padding ajustado para el nombre */
+  flex-grow: 0; /* No queremos que el card-body crezca excesivamente */
+}
+
+.marca-nombre {
+  font-size: 0.85rem; /* Tamaño de fuente para el nombre de la marca */
+  color: #1a0592;       /* Color oscuro para el nombre */
+  margin-bottom: 0;   /* Sin margen inferior extra */
+  font-weight: 600;
+}
+
+/* Adaptación para pantallas más pequeñas */
+@media (max-width: 767px) {
+  #marcas-colaboradoras .text-dark {
+    font-size: 2.2rem;
+  }
+  .marca-card-img-container {
+    min-height: 100px; /* Menor altura en móviles */
+  }
+  .marca-logo-img {
+    max-height: 55px;
+  }
+  .marca-nombre {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .marca-card-img-container {
+    min-height: 80px;
+  }
+  .marca-logo-img {
+    max-height: 45px;
+  }
+}
 
 
 

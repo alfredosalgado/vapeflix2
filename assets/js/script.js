@@ -1455,4 +1455,53 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  
+});
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // TU CÓDIGO EXISTENTE PARA LAS CATEGORÍAS DE PRODUCTOS VA AQUÍ ARRIBA
+  // ...
+  // ...
+
+  const marcas = [
+    { name: "Jam Monster", imgSrc: "./assets/img/marcas/1.jpg", altText: "Logo Jam Monster" },
+    { name: "Fruit Monster", imgSrc: "./assets/img/marcas/2.jpg", altText: "Logo Fruit Monster" },
+    { name: "SMOK", imgSrc: "./assets/img/marcas/3.jpg", altText: "Logo SMOK" },
+    { name: "CORE by Dinner Lady", imgSrc: "./assets/img/marcas/4.jpg", altText: "Logo CORE by Dinner Lady" },
+    { name: "VOOPOO", imgSrc: "./assets/img/marcas/5.jpg", altText: "Logo VOOPOO" },
+    { name: "GeekVape", imgSrc: "./assets/img/marcas/6.jpg", altText: "Logo GeekVape" },
+    { name: "Heaven & Hell", imgSrc: "./assets/img/marcas/7.jpg", altText: "Logo Heaven & Hell" },
+    { name: "Nasty Juice", imgSrc: "./assets/img/marcas/8.jpg", altText: "Logo Nasty Juice" },
+    { name: "Vaporesso", imgSrc: "./assets/img/marcas/9.jpg", altText: "Logo Vaporesso" },
+    { name: "Kings Crest", imgSrc: "./assets/img/marcas/10.jpg", altText: "Logo Kings Crest" }
+  ];
+
+  const marcasContainer = document.getElementById('marcas-logos-container');
+
+  if (marcasContainer) {
+    marcas.forEach(marca => {
+      const marcaHTML = `
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-stretch mb-4">
+            <div class="card marca-card h-100 text-decoration-none">
+                <div class="marca-card-img-container">
+                    <img src="${marca.imgSrc}" alt="${marca.altText || marca.name}" class="card-img-top marca-logo-img">
+                </div>
+                <div class="card-body text-center pt-2">
+                    <h6 class="card-title marca-nombre">${marca.name}</h6>
+                </div>
+            </div>
+        </div>
+      `;
+      marcasContainer.insertAdjacentHTML('beforeend', marcaHTML);
+    });
+  }
 });
